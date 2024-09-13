@@ -14,7 +14,7 @@ with col1:
 with col2:  
     st.markdown(
         """
-    #### **Monkeypox** is a viral zoonotic disease caused by the monkeypox virus, which belongs to the same family as the variola virus (the virus responsible for smallpox). While monkeypox is generally less severe than smallpox, it can cause significant illness in humans. The disease primarily occurs in Central and West Africa, but outbreaks have been reported in other parts of the world.
+     #### Monkeypox is a viral zoonotic disease caused by the monkeypox virus, which belongs to the same family as the variola virus (the virus responsible for smallpox). While monkeypox is generally less severe than smallpox, it can cause significant illness in humans. The disease primarily occurs in Central and West Africa, but outbreaks have been reported in other parts of the world.
     """
     )
 

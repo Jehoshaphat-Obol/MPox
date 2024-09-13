@@ -29,9 +29,11 @@ def mpox(x, T, beta, gamma, sigma, u, alpha, pie):
    
     return Y
 
+N = st.sidebar.slider("Population Size", 1, 10000000, 1000000, 100000)
+
+st.sidebar.markdown("## Parameters(rates)")
 
 # Sidebar sliders for adjusting parameters in real-time
-N = st.sidebar.slider("Population Size", 1, 10000000, 1000000, 100000)
 beta = st.sidebar.slider("Transmission rate (beta)", 0.0000, 1.0000, 0.2761, 0.0001)
 gamma = st.sidebar.slider("Recovery rate (gamma)", 0.0, 0.1, 0.047, 0.001)
 sigma = st.sidebar.slider("Infectious period rate (sigma)", 0.0, 0.1, 0.03, 0.01)
@@ -48,8 +50,15 @@ t_end = time
 t_step = time
 T = np.linspace(t_start, t_end, t_step)
 
+st.sidebar.markdown("## Compartments(SEIR)")
+
 # Initial conditions
-sol0 = np.array([N*0.95, N*0.03, 0.02*N, 0])
+Suscept = st.sidebar.slider("Susceptible", 0.0,1.0,0.95,0.1)
+Exposed = st.sidebar.slider("Exposed", 0.0,1.0,0.03,0.01)
+Infectd = st.sidebar.slider("Infected", 0.0,1.0,0.02,0.01)
+Recoverd = st.sidebar.slider("Recovered", 0.0,1.0,0.0,0.1)
+
+sol0 = np.array([N*Suscept, N*Exposed, Infectd*N, Recoverd])
 
 # Solving the system of differential equations
 sol = si.odeint(mpox, sol0, T, args=(beta, gamma, sigma, u, alpha, pie))
