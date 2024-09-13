@@ -67,8 +67,8 @@ sol1 = sol.T
 # Plotting with Plotly
 fig = go.Figure()
 
-fig.add_trace(go.Scatter(x=T, y=sol1[0], mode='lines', name='Susceptible', line=dict(dash='dash', color='cyan')))
-fig.add_trace(go.Scatter(x=T, y=sol1[1], mode='lines', name='Exposed', line=dict(dash='dash')))
+fig.add_trace(go.Scatter(x=T, y=sol1[0], mode='lines', name='Susceptible', line=dict(dash='solid', color='blue')))
+fig.add_trace(go.Scatter(x=T, y=sol1[1], mode='lines', name='Exposed', line=dict(dash='solid', color="orange")))
 fig.add_trace(go.Scatter(x=T, y=sol1[2], mode='lines', name='Infected', line=dict(dash='dash', color='red')))
 fig.add_trace(go.Scatter(x=T, y=sol1[3], mode='lines', name='Recovered', line=dict(dash='dashdot', color='green')))
 
